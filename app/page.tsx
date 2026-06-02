@@ -144,7 +144,7 @@ export default function Home() {
         onTabChange={setActiveTab}
       />
 
-      <StatsBar eventos={eventos} />
+      <StatsBar eventos={eventos} backend={backend} />
 
       {activeTab === "tabla" ? (
         <TablaExcel

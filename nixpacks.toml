@@ -9,3 +9,6 @@ commands = ["npm run build"]
 
 [start]
 cmd = "npm run start"
+
+[environment]
+NEXT_TELEMETRY_DISABLED = "1"

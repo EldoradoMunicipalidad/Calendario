@@ -57,3 +57,42 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Print styles for PDF export */
+@media print {
+  @page {
+    size: landscape;
+    margin: 10mm;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .tbl-wrap {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  table {
+    font-size: 8px !important;
+    width: 100% !important;
+  }
+  th {
+    background: #f3f4f6 !important;
+    color: black !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .badge, [class*="bg-"], [class*="text-"] {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}

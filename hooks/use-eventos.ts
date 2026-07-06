@@ -179,7 +179,9 @@ export function useEventos() {
       })
       return ref.id
     }
-    return localStorageBackend().add(data)
+    const id = localStorageBackend().add(data)
+    setEventos([...localStorageBackend().getAll()])
+    return id
   }, [backend])
 
   const updateEvento = useCallback(async (id: string, data: Partial<Evento>) => {
